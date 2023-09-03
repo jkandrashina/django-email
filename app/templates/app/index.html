@@ -1,0 +1,24 @@
+{% extends './base.html'%}
+
+{% block title %}Форма для отправки{% endblock %}
+
+{% block content %}
+    <main class="home p-3 mx-auto">
+      <h1 class="display-5 fw-bold mb-4">Отправьте форму</h1>
+      <div class="mb-5">
+        <form method="post" class="contact-form">
+            {% csrf_token %}
+            <div class="row g-3">
+            {% for field in form %}
+              <div class="col-12">
+                {{ field }}
+              </div>
+            {% endfor %}
+              <div class="col-12 col-md-5 mx-auto mt-4">
+                <input class="btn btn-lg btn-outline-primary w-100" type="submit" value="Отправить">
+              </div>
+            </div>
+          </form>
+      </div>
+    </main>
+{% endblock %}
