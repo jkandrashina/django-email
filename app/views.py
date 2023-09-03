@@ -12,7 +12,7 @@ def contact_view(request):
             name = form.cleaned_data['name']
             phone = form.cleaned_data['phone']
             city = form.cleaned_data['city']
-            usluga = form.cleaned_data.get('usluga')
+            usluga = form.cleaned_data['usluga']
             
             msg = f'Отправитель: {name}\n'
             msg += f'Номер телефона: {phone}\n'
