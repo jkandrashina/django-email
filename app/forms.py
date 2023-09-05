@@ -11,18 +11,31 @@ class ContactForm(forms.Form):
     ]
     name = forms.CharField(
         widget=forms.TextInput(
-            attrs={'placeholder': 'Имя'})
+            attrs={
+                'placeholder': 'Имя',
+                'class': 'form-control'}
+        )
     )
     phone = forms.CharField(
         max_length=15,
         widget=forms.TextInput(
-            attrs={'placeholder': 'Телефон'})
+            attrs={
+                'placeholder': 'Телефон',
+                'class': 'form-control'}
+        )
     )
     city = forms.CharField(
         max_length=150,
         widget=forms.TextInput(
-            attrs={'placeholder': 'Выберите город'})
+            attrs={
+                'placeholder': 'Выберите город',
+                'class': 'form-control'}
+        )
     )
     usluga = forms.ChoiceField(
-        choices=services_list
+        choices=services_list,
+        widget=forms.Select(
+            attrs={
+                'class': 'form-select'}
+        )
     )
