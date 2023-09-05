@@ -6,19 +6,32 @@
     <main class="home p-3 mx-auto">
       <h1 class="display-5 fw-bold mb-4">Отправьте форму</h1>
       <div class="mb-5">
-        <form method="post" class="contact-form">
-            {% csrf_token %}
-            <div class="row g-3">
-            {% for field in form %}
-              <div class="col-12">
-                {{ field }}
-              </div>
-            {% endfor %}
-              <div class="col-12 col-md-5 mx-auto mt-4">
-                <input class="btn btn-lg btn-outline-primary w-100" type="submit" value="Отправить">
-              </div>
+        <form method="post" class="contact-form mb-5">
+          {% csrf_token %}
+          <div class="row g-3">
+            {% for field in contact_form %}
+            <div class="col-12">
+              {{ field }}
             </div>
-          </form>
+            {% endfor %}
+            <div class="col-12 col-md-5 mx-auto mt-4">
+              <input class="btn btn-lg btn-outline-primary w-100" type="submit" value="Отправить" name="contact-form">
+            </div>
+          </div>
+        </form>
+        <form method="post" class="contact-form mb-5">
+          {% csrf_token %}
+          <div class="row g-3">
+            {% for field in callme_form %}
+            <div class="col-12">
+              {{ field }}
+            </div>
+            {% endfor %}
+            <div class="col-12 col-md-5 mx-auto mt-4">
+              <input class="btn btn-lg btn-outline-primary w-100" type="submit" value="Отправить" name="callmeback-form">
+            </div>
+          </div>
+        </form>
       </div>
     </main>
 {% endblock %}
