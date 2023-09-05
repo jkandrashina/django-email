@@ -39,3 +39,15 @@ class ContactForm(forms.Form):
                 'class': 'form-select'}
         )
     )
+
+
+
+class CallmebackForm(forms.Form):
+    phone = forms.CharField(
+        max_length=15,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Телефон',
+                'class': 'form-control'}
+        )
+    )
